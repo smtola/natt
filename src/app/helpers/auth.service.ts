@@ -34,7 +34,7 @@ export class AuthService {
   clientInfo: ClientInfo = this.localStorageService.getValue(APP_STORAGE_KEY.Authorized);
 
   get url(){
-    return this.settingService.setting.AUTH_API_URL;
+    return "https://sec-core.sgx.bz/api";
   }
 
   redirectLogin(model: any){

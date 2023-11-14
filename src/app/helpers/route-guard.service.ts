@@ -14,7 +14,7 @@ export class RouteGuardService implements CanActivate {
     const token = this.localStorageService.getValue<any>(APP_STORAGE_KEY.Authorized)?.token;
     if (!token) {
       this.localStorageService.removeValue(APP_STORAGE_KEY.Authorized);
-      window.location.replace(`${this.settingService.setting.AUTH_UI_URL}/auth/login`)
+      window.location.replace(`https://sec-core.sgx.bz/auth/login`)
       return false;
     }
     return true;

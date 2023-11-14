@@ -22,7 +22,7 @@ import {QueryParam} from "../../helpers/base-api.service";
         </ng-template>
 
         <div class="btnGroup">
-         <button nz-button nzType="primary" *ngIf="isBranchAdd" (click)="uiService.showAdd()">
+         <button nz-button nzType="primary" (click)="uiService.showAdd()">
            <span nz-icon nzType="plus"></span>
            Add
          </button>
@@ -137,12 +137,8 @@ export class BranchComponent implements OnInit, OnDestroy{
     sorts: '',
     filters: ''
   }
-  isBranchAdd:boolean = true;
-  isBranchView: boolean = false;
    ngOnInit():void {
      this.breadcrumbData = this.activated.data;
-     this.isBranchAdd = this.authService.isAuthorized(AuthKeys.NATT__SETTING__BRANCH__ADD);
-     this.isBranchView = this.authService.isAuthorized(AuthKeys.NATT__SETTING__BRANCH__VIEW);
    }
 
   ngOnDestroy() {

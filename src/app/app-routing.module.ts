@@ -14,7 +14,7 @@ const routes: Routes = [
   {
     path:'',
     component:PagesComponent,
-     // canActivate: [RouteGuardService],
+     canActivate: [RouteGuardService],
     children:[
       {
         path:'home',
@@ -42,10 +42,10 @@ const routes: Routes = [
       }
     ]
   },
-   // {
-   //    path: 'redirect/:requestId',
-   //   component: RedirectComponent
-   //  }
+   {
+      path: 'redirect/:requestId',
+     component: RedirectComponent
+    }
 ];
 
 @NgModule({

@@ -23,11 +23,9 @@ export class TokenInterceptor implements HttpInterceptor {
   private isRefreshing = false;
   private refreshTokenSubject: BehaviorSubject<any> = new BehaviorSubject<any>(null);
   constructor(
-    private translate: TranslateService,
     private localStorageService: LocalStorageService,
     private authService: AuthService,
     private router: Router,
-    private notificationService: NotificationService,
     private settingService: SettingService
     ) { }
   public jwtHelper: JwtHelperService = new JwtHelperService();
@@ -44,7 +42,7 @@ export class TokenInterceptor implements HttpInterceptor {
           return this.handle401Error(request, next, authorized);
         } else {
           if (request.headers.get('disableErrorNotification') != 'yes'){
-            this.notificationService.errorNotification(error);
+            // this.notificationService.errorNotification(error);
           }
           return throwError(error);
         }
@@ -56,7 +54,7 @@ export class TokenInterceptor implements HttpInterceptor {
     return request.clone({
       setHeaders: {
         Authorization: `Bearer ${token}`,
-        'Accept-Language': this.translate.currentLang || 'en'
+        'Accept-Language': 'en'
       },
     });
   }
@@ -77,7 +75,7 @@ export class TokenInterceptor implements HttpInterceptor {
         catchError((error) => {
             if (this.isRefreshing){
               this.localStorageService.removeValue(APP_STORAGE_KEY.Authorized);
-              window.location.replace(`${this.settingService.setting.AUTH_UI_URL}/auth/login`)
+              window.location.replace(`https://sec-core.sgx.bz/auth/login`)
             }else{
               //alert("Error:"+error.message);
             }
