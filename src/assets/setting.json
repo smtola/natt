@@ -1,0 +1,8 @@
+{
+  "BASE_API_URL": "http://s8.sgx.bz:60564/api",
+  "LANG_URL": "https://sec-core.sgx.bz/files/langs/natt",
+  "AUTH_API_URL": "https://sec-core.sgx.bz/api",
+  "AUTH_UI_URL": "https://sec-core.sgx.bz",
+  "APP_NAME": "NATT",
+  "APP_ICON": "https://sec-core.sgx.bz/files/22/12/logo_text-black-02_.png"
+}

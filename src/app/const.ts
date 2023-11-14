@@ -1,0 +1,181 @@
+import {en_US, km_KH, zh_CN} from "ng-zorro-antd/i18n";
+
+export const APP_STORAGE_KEY = {
+  Authorized: "authorized",
+  RefreshToken: "RefreshToken",
+  Language: "Language"
+};
+
+export const BRANCH_STORAGE_KEY = "BranchStorageKey";
+
+
+export enum REPORT_RENDER_TYPES {
+  HTML5 = 1,
+  Excel = 2,
+  Word = 3,
+  Pdf =4
+}
+
+export enum LEAVE_TYPE{
+  Casual = 16,
+  Annual = 17,
+  Maternity = 18,
+  PublicHoliday = 19,
+  Paternity = 20,
+  Bereavement = 21,
+  Compensatory = 22,
+  Unpaid = 23,
+  Sabbatical = 24,
+  Sick = 25,
+}
+
+export enum PageSize
+{
+  A1 = 1,
+  A2 = 2,
+  A3 = 3,
+  A4 = 4,
+  A5 = 5,
+}
+export enum Orientation
+{
+  Portrait = 1,
+  Landscape = 2,
+}
+
+export enum ReportParamDisplay
+{
+  Inline = 1,
+  Modal = 2
+}
+
+export const PAGE_SIZE_OPTION = [10, 25, 50, 100];
+
+export const ADDRESS_FILTER_OPTION = {
+  Province: "province",
+  District: "district",
+  Commune: "commune",
+  Village: "village"
+}
+
+export const REPORT_NAME =
+{
+  Complain : "ListOfComplaint",
+  Individual : "Individual",
+  AuditAndTracking : "AuditAndTracking",
+  Management : "Management",
+  ManagementChart : "ManagementChart",
+  Operational : "Operational",
+  UserRetrievingData : "UserRetrievingData",
+}
+
+export const Locale: {KH: any, EN: any,ZH:any, DEFAULT: any} = {
+  KH: {local: km_KH, localId: 'km'},
+  EN: {local: en_US, localId: 'en'},
+  ZH: {local: zh_CN, localId: 'zh'},
+  DEFAULT: {local: km_KH, localId: 'km'},
+};
+
+export const LANGUAGES: {key:{local: any, localId: string}, image:string, label: string}[] = [
+  {key: Locale.KH, label: "ភាសាខ្មែរ", image: '/assets/image/kh_FLAG.png'},
+  {key: Locale.EN, label: "English", image: '/assets/image/en_FLAG.png'},
+  {key: Locale.ZH, label: "中文", image: '/assets/image/ch_FLAG.png'},
+];
+
+export const AuthKeys = {
+  NATT : 30287,
+  NATT__APPOINTMENT : 30199,
+  NATT__APPOINTMENT__ADD : 30212,
+  NATT__APPOINTMENT__CANCEL : 30282,
+  NATT__APPOINTMENT__CHANGE : 30281,
+  NATT__APPOINTMENT__COMPLETE : 30283,
+  NATT__APPOINTMENT__EDIT : 30213,
+  NATT__APPOINTMENT__LIST : 30284,
+  NATT__APPOINTMENT__REMOVE : 30214,
+  NATT__APPOINTMENT__UNDO : 30280,
+  NATT__APPOINTMENT__VIEW : 30215,
+  NATT__CUSTOMER : 30200,
+  NATT__CUSTOMER__ADD : 30216,
+  NATT__CUSTOMER__EDIT : 30217,
+  NATT__CUSTOMER__LIST : 30267,
+  NATT__CUSTOMER__REMOVE : 30218,
+  NATT__CUSTOMER__VIEW : 30219,
+  NATT__REPORT : 30266,
+  NATT__REPORT__MENU : 30286,
+  NATT__SETTING : 30202,
+  NATT__SETTING__APPOINTMENT_TYPE : 30204,
+  NATT__SETTING__APPOINTMENT_TYPE__ADD : 30225,
+  NATT__SETTING__APPOINTMENT_TYPE__EDIT : 30226,
+  NATT__SETTING__APPOINTMENT_TYPE__LIST : 30269,
+  NATT__SETTING__APPOINTMENT_TYPE__REMOVE : 30227,
+  NATT__SETTING__APPOINTMENT_TYPE__VIEW : 30228,
+  NATT__SETTING__AUTO_NUMBER : 30261,
+  NATT__SETTING__AUTO_NUMBER__ADD : 30262,
+  NATT__SETTING__AUTO_NUMBER__EDIT : 30263,
+  NATT__SETTING__AUTO_NUMBER__LIST : 30270,
+  NATT__SETTING__AUTO_NUMBER__REMOVE : 30264,
+  NATT__SETTING__AUTO_NUMBER__VIEW : 30265,
+  NATT__SETTING__BRANCH : 30205,
+  NATT__SETTING__BRANCH__ADD : 30229,
+  NATT__SETTING__BRANCH__EDIT : 30230,
+  NATT__SETTING__BRANCH__LIST : 30271,
+  NATT__SETTING__BRANCH__PULL : 30248,
+  NATT__SETTING__BRANCH__REMOVE : 30231,
+  NATT__SETTING__BRANCH__VIEW : 30232,
+  NATT__SETTING__CUSTOMER_GROUP : 30339,
+  NATT__SETTING__CUSTOMER_GROUP__ADD : 30340,
+  NATT__SETTING__CUSTOMER_GROUP__EDIT : 30341,
+  NATT__SETTING__CUSTOMER_GROUP__REMOVE : 30342,
+  NATT__SETTING__CUSTOMER_GROUP__VIEW : 30343,
+  NATT__SETTING__LOOKUP : 30206,
+  NATT__SETTING__LOOKUP__ADD : 30233,
+  NATT__SETTING__LOOKUP__EDIT : 30234,
+  NATT__SETTING__LOOKUP__LIST : 30273,
+  NATT__SETTING__LOOKUP__REMOVE : 30235,
+  NATT__SETTING__LOOKUP__VIEW : 30272,
+  NATT__SETTING__MENU : 30285,
+  NATT__SETTING__POSITION : 30207,
+  NATT__SETTING__POSITION__ADD : 30236,
+  NATT__SETTING__POSITION__EDIT : 30237,
+  NATT__SETTING__POSITION__LIST : 30274,
+  NATT__SETTING__POSITION__PULL : 30239,
+  NATT__SETTING__POSITION__REMOVE : 30238,
+  NATT__SETTING__POSITION__VIEW : 30240,
+  NATT__SETTING__REPORT : 30208,
+  NATT__SETTING__REPORT__ADD : 30241,
+  NATT__SETTING__REPORT__EDIT : 30242,
+  NATT__SETTING__REPORT__LIST : 30275,
+  NATT__SETTING__REPORT__REMOVE : 30243,
+  NATT__SETTING__REPORT__VIEW : 30244,
+  NATT__SETTING__REPORT_GROUP : 30209,
+  NATT__SETTING__REPORT_GROUP__ADD : 30245,
+  NATT__SETTING__REPORT_GROUP__EDIT : 30246,
+  NATT__SETTING__REPORT_GROUP__LIST : 30277,
+  NATT__SETTING__REPORT_GROUP__REMOVE : 30247,
+  NATT__SETTING__REPORT_GROUP__VIEW : 30276,
+  NATT__SETTING__SERVICE_ITEM : 30210,
+  NATT__SETTING__SERVICE_ITEM__ADD : 30249,
+  NATT__SETTING__SERVICE_ITEM__EDIT : 30250,
+  NATT__SETTING__SERVICE_ITEM__LIST : 30278,
+  NATT__SETTING__SERVICE_ITEM__REMOVE : 30251,
+  NATT__SETTING__SERVICE_ITEM__VIEW : 30252,
+  NATT__SETTING__SPACE : 30211,
+  NATT__SETTING__SPACE__ADD : 30253,
+  NATT__SETTING__SPACE__EDIT : 30254,
+  NATT__SETTING__SPACE__LIST : 30279,
+  NATT__SETTING__SPACE__REMOVE : 30255,
+  NATT__SETTING__SPACE__VIEW : 30256,
+  NATT__SETTING__SYSTEM_SETTING : 30257,
+  NATT__SETTING__SYSTEM_SETTING__ADD : 30258,
+  NATT__SETTING__SYSTEM_SETTING__EDIT : 30259,
+  NATT__SETTING__SYSTEM_SETTING__REMOVE : 30260,
+  NATT__STAFF : 30203,
+  NATT__STAFF__ADD : 30220,
+  NATT__STAFF__EDIT : 30221,
+  NATT__STAFF__LIST : 30268,
+  NATT__STAFF__PULL : 30224,
+  NATT__STAFF__REMOVE : 30222,
+  NATT__STAFF__VIEW : 30223,
+}
+
+
