@@ -1,17 +1,17 @@
 import {EventEmitter, Injectable} from "@angular/core";
 import {NzModalService} from "ng-zorro-antd/modal";
-import {BranchOperationComponent} from "./branch-operation.component";
+import {LookupItemOperationComponent} from "./lookup-item-operation.component";
 
 @Injectable({providedIn: "root"})
 
-export class BranchUiService {
+export class LookupUiService {
   constructor(
     private modalService: NzModalService,
   ) {}
   refresher = new EventEmitter<{key:string, value?: any, componentId?:any}>();
   showAdd(componentId: any = ''): void{
     this.modalService.create({
-      nzContent: BranchOperationComponent,
+      nzContent: LookupItemOperationComponent,
       nzFooter: null,
       nzClosable: true,
       nzWidth: '460px',

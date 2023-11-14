@@ -28,10 +28,13 @@ import {RedirectComponent} from "./redirect/redirect.component";
 import {TokenInterceptor} from "./helpers/token.interceptor";
 import {BaseMultipleSelectComponent} from "./share-components/base-multiple-select.component";
 import {AntModule} from "./ant.module";
+import {SettingHttpService} from "./app-setting";
+import {LookupItemListComponent} from "./pages/lookup/lookup-item-list/lookup-item-list.component";
+import {LookupItemOperationComponent} from "./pages/lookup/lookup-item-list/lookup-item-operation.component";
 
-// export function app_Init(settingsHttpService: SettingHttpService) {
-//   return () => settingsHttpService.initializeApp();
-// }
+export function app_Init(settingsHttpService: SettingHttpService) {
+  return () => settingsHttpService.initializeApp();
+}
 
 @NgModule({
   declarations: [
@@ -40,15 +43,23 @@ import {AntModule} from "./ant.module";
     HomePageComponent,
     BranchComponent,
     PagesComponent,
+    LookupComponent,
+    LookupItemListComponent,
+
+
     NoResultFoundComponent,
     FilterInputComponent,
-    MapLanguagePipe,
-    LookupComponent,
-    BreadcrumbComponent,
     LanguageInputComponent,
+
+    MapLanguagePipe,
+
+    BreadcrumbComponent,
     BranchOperationComponent,
+    LookupItemOperationComponent,
     RedirectComponent,
-    BaseMultipleSelectComponent
+    BaseMultipleSelectComponent,
+
+
   ],
   imports: [
     BrowserModule,
@@ -68,7 +79,7 @@ import {AntModule} from "./ant.module";
 
     },
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
-    // { provide: APP_INITIALIZER, useFactory: app_Init, deps: [SettingHttpService], multi: true},
+    { provide: APP_INITIALIZER, useFactory: app_Init, deps: [SettingHttpService], multi: true},
     DecimalPipe,CurrencyPipe,
   ],
   bootstrap: [AppComponent]

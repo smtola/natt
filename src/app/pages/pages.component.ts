@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AuthService} from "../helpers/auth.service";
 
 @Component({
   selector: 'app-pages',
@@ -19,12 +20,12 @@ import { Component } from '@angular/core';
         </div>
         <div class="scrollbar">
           <ul nz-menu nzMode="inline" class="custom-menu">
-            <li  nz-menu-item routerLink="/home" >
+            <li  nz-menu-item routerLink="home" >
               <i nz-icon nzType="home"></i>
               <span>Home</span>
             </li>
 
-            <li  nz-menu-item routerLink="/setting">
+            <li  nz-menu-item routerLink="setting">
               <i nz-icon nzType="setting"></i>
               <span>Setting</span>
             </li>
@@ -90,6 +91,11 @@ import { Component } from '@angular/core';
     }
   `]
 })
-export class PagesComponent {
-
+export class PagesComponent implements OnInit{
+  name:string ='';
+  constructor(private authService:AuthService) {
+  }
+  ngOnInit() {
+    this.name = this.authService.clientInfo.name?.charAt(0).toUpperCase()! + this.authService.clientInfo.name?.slice(1);
+  }
 }

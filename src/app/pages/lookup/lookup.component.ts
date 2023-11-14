@@ -21,7 +21,7 @@ import {ActivatedRoute, Data} from "@angular/router";
                           </li>
                         </ul>
                     </nz-sider>
-                  <nz-content>
+                  <nz-content class="inner-content">
                     <router-outlet></router-outlet>
                   </nz-content>
                 </nz-layout>

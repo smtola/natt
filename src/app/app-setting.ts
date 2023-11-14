@@ -25,18 +25,18 @@ export class SettingHttpService {
     // console.log('initialize httpSetting service');
   }
 
-  // initializeApp(): Promise<any> {
-  //
-  //   return new Promise(
-  //     (resolve)  => {
-  //       this.http.get('assets/setting.json')
-  //         .toPromise()
-  //         .then(response => {
-  //             this.settingsService.setting = <Setting>response;
-  //             resolve(null);
-  //           }
-  //         )
-  //     }
-  //   );
-  // }
+  initializeApp(): Promise<any> {
+
+    return new Promise(
+      (resolve)  => {
+        this.http.get('assets/setting.json')
+          .toPromise()
+          .then(response => {
+              this.settingsService.setting = <Setting>response;
+              resolve(null);
+            }
+          )
+      }
+    );
+  }
 }

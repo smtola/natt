@@ -5,8 +5,9 @@ import {PagesComponent} from "./pages/pages.component";
 import {SettingComponent} from "./pages/setting/setting.component";
 import {BranchComponent} from "./pages/branch/branch.component";
 import {LookupComponent} from "./pages/lookup/lookup.component";
-import {RouteGuardService} from "./helpers/route-guard.service";
 import {RedirectComponent} from "./redirect/redirect.component";
+import {LookupItemListComponent} from "./pages/lookup/lookup-item-list/lookup-item-list.component";
+import {RouteGuardService} from "./helpers/route-guard.service";
 
 const routes: Routes = [
 
@@ -14,38 +15,45 @@ const routes: Routes = [
   {
     path:'',
     component:PagesComponent,
-     // canActivate: [RouteGuardService],
+     canActivate: [RouteGuardService],
     children:[
       {
         path:'home',
         component:HomePageComponent
       },
       {
-        path:'setting',
-        component:SettingComponent
+        path: 'setting',
+        component: SettingComponent
       },
       {
-        path:'setting/branch',
-        component:BranchComponent,
+        path: 'setting/branch',
+        component: BranchComponent,
         data: [
-          {index:0,label: "Setting", url:'/setting'},
-          {index:1,label: "Branch", url: null}
+          {index: 0, label: 'Setting', url: '/setting'},
+          {index: 1, label: 'Branch', url: null}
         ]
       },
       {
         path:'setting/lookup',
         component:LookupComponent,
+        children: [
+          {path: '', pathMatch: 'full', redirectTo: '/setting/lookup/1'},
+          {
+            path: ':id',
+            component: LookupItemListComponent
+          }
+        ],
         data: [
-          {index:0,label: "Setting", url:'/setting'},
-          {index:1,label: "Lookup", url: null}
+          {index: 0, label: 'Setting', url: '/setting'},
+          {index: 1, label: 'Lookup', url: null},
         ]
       }
     ]
   },
-   // {
-   //    path: 'redirect/:requestId',
-   //   component: RedirectComponent
-   //  }
+   {
+      path: 'redirect/:requestId',
+     component: RedirectComponent
+    }
 ];
 
 @NgModule({

@@ -59,7 +59,7 @@ import {BranchUiService} from "./branch-ui.service";
         </div>
     </div>
   `,
-  styleUrls: ['../../../assets/scss/operation_page.scss'],
+  styleUrls: ['../../../assets/scss/operation-page.scss'],
 })
 export class BranchOperationComponent implements OnInit{
 
