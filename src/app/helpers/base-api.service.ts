@@ -22,7 +22,7 @@ export class SharedDomain {
 export class BaseApiService<T extends SharedDomain> {
   constructor(private endpoint: string, private httpClient: HttpClient, private settingService: SettingService) {
   }
-  public getUrl = (): string => `${this.settingService.setting.BASE_API_URL}/${this.endpoint}`;
+  public getUrl = (): string => `http://s8.sgx.bz:60564/api/${this.endpoint}`;
 
   public search(query: QueryParam): Observable<SearchResult<T>> {
     return this.httpClient.get<SearchResult<T>>(`${this.getUrl()}`, {

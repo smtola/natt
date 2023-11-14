@@ -29,13 +29,17 @@ export class RedirectComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.requestId = params['requestId'];
-      this.authService.redirectLogin({'requestId': this.requestId}).subscribe((result: any) => {
+      this.authService.redirectLogin({'requestId': this.requestId}).subscribe({
+        next:(result: any) => {
+          console.log(result);
         this.localStorageService.setValue({key: APP_STORAGE_KEY.Authorized, value: result});
         this.router.navigate(['home']).then();
         this.loading = false;
-      }, (err: HttpErrorResponse) => {
-        window.location.href = `${this.settingService.setting.AUTH_UI_URL}/auth/login`;
-      });
+      },error:  (err: HttpErrorResponse) => {
+        console.log(err);
+        window.location.href = `https://sec-core.sgx.bz/auth/login`;
+      }
+    });
     });
   }
 
